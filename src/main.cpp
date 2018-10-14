@@ -17,13 +17,14 @@ int main(int argc, char const *argv[])
 	//
 	// <tr><td>74.204.10.10</td><td>59535</td><td>US</td><td class='hm'>United States</td><td>elite proxy</td><td class='hm'>no</td><td class='hx'>yes</td><td class='hm'>23 seconds ago</td></tr>
 	//
-	
+
 	TeaPCRE *tre = new TeaPCRE;
 	tre->setPattern(
 		"(?:<tr><td>)([\\d\\.]*)(?:<.+<td>)(\\d{2,5})(?:<.+<td class='hm'>)(.*)(?:<)", 
 		PCRE_DOTALL | PCRE_CASELESS | PCRE_MULTILINE | PCRE_UNGREEDY
 	);
 	tre->setSubject(body);
+	delete body;
 	unsigned int i, j, matchCount, matchCountD2;
 	char ***result = (char***)malloc(2000 * sizeof(char***));
 	tre->multiFindAll(result, &matchCount, &matchCountD2, 49);
