@@ -1,0 +1,8 @@
+*.o
+*.swo
+*.swp
+*.tmp
+/bin
+/result.txt
+/.gdb_history
+/peda-session-bin.txt
