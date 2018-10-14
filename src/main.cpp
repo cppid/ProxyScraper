@@ -27,7 +27,7 @@ int main(int argc, char const *argv[])
 	delete body;
 	unsigned int i, j, matchCount, matchCountD2;
 	char ***result = (char***)malloc(2000 * sizeof(char***));
-	tre->multiFindAll(result, &matchCount, &matchCountD2, 49);
+	tre->multiFindAll(result, &matchCount, &matchCountD2);
 	delete tre;
 
 	FILE *handle = fopen("result.txt", "w");
