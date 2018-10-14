@@ -10,12 +10,12 @@ int main(int argc, char const *argv[])
 	tch.exec();
 	tch.close();
 
-	char ***result = (char***)malloc(1024 * sizeof(char***));
-	unsigned int i, j, matchCount, matchCountD2;
+	char ***result = (char***)malloc(2000 * sizeof(char***));
 
 	TeaPCRE tre;
+	unsigned int i, j, matchCount, matchCountD2;
 
-	char *body = (char*)malloc(100000);
+	char *body = (char*)malloc(100000 * sizeof(char));
 	memcpy(body, tch.getBody().c_str(), strlen(tch.getBody().c_str()));
 
 	//
@@ -33,13 +33,16 @@ int main(int argc, char const *argv[])
 	for (i = 0; i < matchCount; i++) {
 		for (j = 1; j < matchCountD2; j++) {
 			fwrite(result[i][j], strlen(result[i][j]), sizeof(char), handle);
-
+			printf("%s", result[i][j]);
 			if (j != matchCountD2 - 1) {
+				printf("|");
 				fwrite("|",1, sizeof(char), handle);
 			}
 		}
+		printf("\n");
 		fwrite("\n", 1, sizeof(char), handle);
 	}
+	fflush(handle);
 	fclose(handle);
 	return 0;
 }

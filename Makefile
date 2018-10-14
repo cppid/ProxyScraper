@@ -4,7 +4,7 @@ COMPILER 		= g++
 LINKER			= g++
 
 LINKER_FLAGS	= -o
-COMPILER_FLAGS	= -Wall -g -std=c++11 -c -o
+COMPILER_FLAGS	= -Wall -g -O3 -std=c++11 -c -o
 
 DEPENDENCIES	= -lcurl -lpcre
 
