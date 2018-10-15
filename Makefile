@@ -6,7 +6,7 @@ LINKER			= g++
 LINKER_FLAGS	= -o
 COMPILER_FLAGS	= -Wall -g -O3 -std=c++11 -c -o
 
-DEPENDENCIES	= -lcurl -lpcre
+DEPENDENCIES	= -lcurl -lpcre -lpthread
 
 BIN				= bin
 SOURCES			= $(shell find src -name '*.cpp')
