@@ -2,5 +2,5 @@
 
 
 ```shell
-make && ./bin && cat result.txt
+make && ./bin
 ```
